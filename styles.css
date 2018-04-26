@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+html {
+	 background-image: url("raceway.jpg");
+	 background-size: center;
+	 background-repeat: repeat;
+}
+body {
+	
+}
+header {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 100%;
+	position: absolute;
+	left: 40%;
+}
+
+.redCarPosition {
+	position: absolute;
+	top: 220px;
+	left: 23px;
+}
+.orangeCarPosition {
+	position: absolute;
+	top: 240px;
+	left: 0px;
+}
+.lightPosition {
+	position: absolute;
+	top: 500px;
+	left: 700px;
+	height: 200px;
+}
