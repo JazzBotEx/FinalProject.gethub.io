@@ -19,31 +19,9 @@
 <img id="green" src="greenLight.png" class="lightPosition">
 <img id="red" src="redLight.png" class="lightPosition" onclick="startRace()">
 
-
 <script>
-function startRace() {
-var redT = document.getElementById("redTruck");
-var orangeT = document.getElementById("orangeTruck");
-var speed1 = Math.floor(Math.random() * 10) + 1;
-var speed2 = Math.floor(Math.ramdon() * 10) + 1;
-
-var id = setInterval(frame, 1000);
-hideRed();
-frame();
-
-
-function hideRed(){
-	//hide the red light
-	document.getElementById("red").style.display = "none";
-	alert("hideRed");
-}
-
-function frame(){
-	redT.style.left += speed1 + 'px';
-	alert("frame");
-}
-
-
+function startRace(){
+	red.style.visibility == "hidden";
 }
 </script>
 
