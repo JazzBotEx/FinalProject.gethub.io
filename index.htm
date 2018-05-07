@@ -14,16 +14,43 @@
 <p id="test"> Welcome to the Great Delivery Truck Race!</p>
 <p> Click the Red light to start the race</p>
 	</header>
+<img id="fishishLine" src="finishline.png" class="linePosition">
+<img id="house" src="house.png" class="housePosition">
 <img id="redTruck" src="redtruck2.png" class="redCarPosition">
 <img id="orangeTruck" src="orangetruck2.png" class="orangeCarPosition">
 <img id="green" src="greenLight.png" class="lightPosition">
 <img id="red" src="redLight.png" class="lightPosition" onclick="startRace()">
 
+
 <script>
 function startRace(){
-	red.style.visibility == "hidden";
+	document.getElementById("red").style.display = "none";
+	
+	var counter = 0;
+	var totalRed = 0;
+	var totalOrange = 0;
+	var i = setInterval(function(){
+	var randOne = Math.floor(Math.random() * 100);
+	var randTwo = Math.floor(Math.random() * 100);
+	
+	totalRed += randOne;
+	totalOrange += randTwo;
+	
+	document.getElementById("redTruck").style.left = totalRed + "px";
+	document.getElementById("orangeTruck").style.left = totalOrange + "px";
+	
+	alert("randone: "+ randOne + " randTwo: " + randTwo + " totalred: " + totalRed + " totalOrange: " + totalOrange);
+	
+	counter++;
+	//this works
+		if(counter == 100 || totalRed >= 1095 || totalOrange >= 1095){
+			clearInterval(i);
+		}
+	}, 200);
+	
 }
 </script>
 
 </body>
 </html>
+

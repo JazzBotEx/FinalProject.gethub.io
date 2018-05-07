@@ -5,9 +5,7 @@ html {
 	 background-size: center;
 	 background-repeat: repeat;
 }
-body {
-	
-}
+
 header {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 100%;
@@ -30,4 +28,16 @@ header {
 	top: 500px;
 	left: 50%;
 	height: 200px;
+}
+.linePosition {
+	position: absolute;
+	height: 100px;
+	top: 350px;
+	left: 1300px;
+}
+.housePosition {
+	position: absolute;
+	height: 150px;
+	left: 1300px;
+	top: 210px;
 }
