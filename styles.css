@@ -1,17 +1,17 @@
 @charset "utf-8";
 
-html {
+html { /* set background */
 	 background-image: url("raceway.jpg");
 	 background-size: center;
 	 background-repeat: repeat;
 }
-
-header {
+header { /* header font and position of text */
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 100%;
 	position: absolute;
 	left: 40%;
 }
+
 /* start classes */
 .redCarPosition {
 	position: absolute;
@@ -23,13 +23,13 @@ header {
 	top: 240px;
 	left: 0px;
 }
-.lightPosition {
+.lightPosition { /* both red and green light */
 	position: absolute;
 	top: 500px;
 	left: 50%;
 	height: 200px;
 }
-.linePosition {
+.linePosition { /* finish line */
 	position: absolute;
 	height: 100px;
 	top: 350px;
@@ -41,7 +41,7 @@ header {
 	left: 1300px;
 	top: 210px;
 }
-.blockPosition {
+.blockPosition { /* winner screen */
 	position: absolute;
 	height: 300px;
 	top: 250px;
