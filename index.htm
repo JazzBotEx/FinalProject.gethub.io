@@ -12,43 +12,69 @@
 <body>
 	<header>
 <p id="test"> Welcome to the Great Delivery Truck Race!</p>
-<p> Click the Red light to start the race</p>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;Click the Red light to start the race. </p>
 	</header>
-<img id="fishishLine" src="finishline.png" class="linePosition">
-<img id="house" src="house.png" class="housePosition">
+	
+<!-- declare images -->
+<img src="finishline.png" class="linePosition">
+<img src="house.png" class="housePosition">
 <img id="redTruck" src="redtruck2.png" class="redCarPosition">
 <img id="orangeTruck" src="orangetruck2.png" class="orangeCarPosition">
 <img id="green" src="greenLight.png" class="lightPosition">
 <img id="red" src="redLight.png" class="lightPosition" onclick="startRace()">
+<img id="winner1" src="winnerblock1.png" class="blockPosition" onclick="reset()">
+<img id="winner2" src="winnerblock2.png" class="blockPosition" onclick="reset()">
 
-
+<!-- start scripts and functions -->
 <script>
-function startRace(){
-	document.getElementById("red").style.display = "none";
-	
-	var counter = 0;
-	var totalRed = 0;
+function startRace(){ //onclick event from the red light image
+	var totalRed = 25;
 	var totalOrange = 0;
-	var i = setInterval(function(){
-	var randOne = Math.floor(Math.random() * 100);
-	var randTwo = Math.floor(Math.random() * 100);
+	
+	document.getElementById("red").style.visibility = "hidden"; //hide the red light to show a green light
+	
+	var i = setInterval(function(){ //start interval for the race
+	var randOne = Math.floor(Math.random() * 25) + 1;
+	var randTwo = Math.floor(Math.random() * 25) + 1;
 	
 	totalRed += randOne;
 	totalOrange += randTwo;
 	
+	//truck images movement
 	document.getElementById("redTruck").style.left = totalRed + "px";
 	document.getElementById("orangeTruck").style.left = totalOrange + "px";
 	
-	alert("randone: "+ randOne + " randTwo: " + randTwo + " totalred: " + totalRed + " totalOrange: " + totalOrange);
-	
-	counter++;
-	//this works
-		if(counter == 100 || totalRed >= 1095 || totalOrange >= 1095){
+	//find of one of the trucks has won the race.
+	//the red truck has a small head start so that is made up for here
+	//this is done because the red truck image is smaller and so they look like they start at the same point.
+		if(totalRed >= 1145 || totalOrange >= 1120){
 			clearInterval(i);
+			
+			//alert to test var
+			//alert("randone: "+ randOne + " randTwo: " + randTwo + " totalred: " + totalRed + " totalOrange: " + totalOrange);
+			
+			//pull up the winning trucks winning image
+			if(totalRed >= 1145 && totalOrange >= 1120){
+				alert("Well this is awkword. It was a tie! The game will be reset.");
+				reset();
+			}else if(totalRed >= 1145){
+				document.getElementById("winner1").style.visibility = "visible";
+			}else if(totalOrange >= 1120){
+				document.getElementById("winner2").style.visibility = "visible";
+			}
+			
 		}
-	}, 200);
-	
-}
+	}, 200); //200 milisecound intervals
+}	
+	function reset(){//reset the screen images so race may be started again
+		document.getElementById("red").style.visibility = "visible";
+		document.getElementById("winner1").style.visibility = "hidden";
+		document.getElementById("winner2").style.visibility = "hidden";
+		
+		document.getElementById("redTruck").style.left = 25 + "px"
+		document.getElementById("orangeTruck").style.left = 0 + "px";
+	}
+
 </script>
 
 </body>

@@ -12,11 +12,11 @@ header {
 	position: absolute;
 	left: 40%;
 }
-
+/* start classes */
 .redCarPosition {
 	position: absolute;
 	top: 220px;
-	left: 23px;
+	left: 25px;
 }
 .orangeCarPosition {
 	position: absolute;
@@ -41,3 +41,14 @@ header {
 	left: 1300px;
 	top: 210px;
 }
+.blockPosition {
+	position: absolute;
+	height: 300px;
+	top: 250px;
+	left: 500px;
+	visibility: hidden;
+}
+
+
+
+
